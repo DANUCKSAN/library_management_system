@@ -6,22 +6,22 @@ import "./globals.css";
 const ibmPlexSans = localFont({
   src: [
     {
-      path: "/fonts/IBMPlexSans-Regular.woff2",
+      path: "/fonts/IBMPlexSans-Regular.ttf",
       weight: "400",
       style: "normal",
     },
     {
-path: "/fonts/IBMPlexSans-medium.woff2",
+path: "/fonts/IBMPlexSans-medium.ttf",
       weight: "500",
       style: "normal",
     },
     {
-path: "/fonts/IBMPlexSans-semiBold.woff2",
+path: "/fonts/IBMPlexSans-semiBold.ttf",
       weight: "600",
       style: "normal",
     },
     {
-      path: "/fonts/IBMPlexSans-Bold.woff2",
+      path: "/fonts/IBMPlexSans-Bold.ttf",
       weight: "700",
       style: "normal",
     },

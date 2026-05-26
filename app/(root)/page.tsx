@@ -9,7 +9,7 @@ export default function Home() {
         <p>Welcome to the University Library Management System!</p>
       </main>
 
-      <Button variant="outline">Get Started</Button>
+      <Button>Get Started</Button>
     </>
   );
 }
