@@ -1,15 +1,14 @@
+import BookList from "@/components/BookList";
+import BookOverview from "@/components/BookOverview";
 import { Button } from "@/components/ui/button";
 
 
 export default function Home() {
   return (
     <>
-      <main>
-        <h1>University Library Management System</h1>
-        <p>Welcome to the University Library Management System!</p>
-      </main>
+     <BookOverview/>
+     <BookList/>
 
-      <Button>Get Started</Button>
     </>
   );
 }
