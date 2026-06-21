@@ -1,6 +1,7 @@
 "use client";
 
 import AuthForm from "@/components/AuthForm";
+import { signUp } from "@/lib/actions/auth";
 import { signUpSchema } from "@/lib/validation";
 
 
@@ -16,13 +17,7 @@ const Page = () => (
       universityId: 0,
       universityCard: "",
     }}
-    onSubmit={async (data) => {
-      // Simulate an API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      // For demonstration, we assume the sign-up is always successful
-      return { success: true };
-    }}  
+    onSubmit={signUp}
   />
 );
 
