@@ -3,6 +3,7 @@
 import React from "react";
 import AuthForm from "@/components/AuthForm";
 import { signInSchema } from "@/lib/validation";
+import { signInWithCredentials } from "@/lib/actions/auth";
 
 
 const Page = () => (
@@ -13,13 +14,7 @@ const Page = () => (
       email: "",
       password: "",
     }}
-    onSubmit={async (data) => {
-      // Simulate an API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      // For demonstration, we assume the sign-in is always successful
-      return { success: true };
-    }}
+    onSubmit={signInWithCredentials}
   />
 );
 
