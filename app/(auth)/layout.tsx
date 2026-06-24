@@ -1,17 +1,11 @@
 import { ReactNode } from "react";
 import Image from "next/image";
-import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import { auth } from "@/auth";
 
 const Layout = async ({ children }: { children: ReactNode }) => {
   const session = await auth();
 
-<<<<<<< HEAD
-  if (session) redirect("/");
-=======
-   const session = await auth();
->>>>>>> dan
 
   if (session) {
     redirect("/");

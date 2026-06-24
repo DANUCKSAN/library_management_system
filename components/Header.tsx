@@ -4,11 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
-<<<<<<< HEAD
-import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
-=======
-import { Avatar, AvatarFallback } from './ui/avatar'
->>>>>>> dan
+import { Avatar, AvatarFallback} from './ui/avatar'
 import { Session } from 'next-auth'
 
 const Header = ({ session }: { session: Session }) => {
@@ -28,22 +24,14 @@ const Header = ({ session }: { session: Session }) => {
         </Link>
       </li>
       <li>
-<<<<<<< HEAD
+
         <Link href="/my-profile">
         <Avatar>
           
           <AvatarFallback className='bg-yellow-100'>{session?.user?.name?.split(' ').map((n) => n[0]).join('')}</AvatarFallback>
         </Avatar>
         </Link>
-=======
-       <Link href="/my-profile">
-       <Avatar>
-        <AvatarFallback className='bg-light-200 text-gray-600'>
-          {session.user?.name?.[0] ?? "U"}
-        </AvatarFallback>
-       </Avatar>
-       </Link>
->>>>>>> dan
+
       </li>
     </ul>
     </header>

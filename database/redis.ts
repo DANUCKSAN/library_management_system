@@ -6,4 +6,4 @@ const redis = new Redis({
   token: config.env.upstash.restToken,
 })
 
-export default redis
+export default redis;
