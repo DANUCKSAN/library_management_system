@@ -7,7 +7,8 @@ import { hash } from "bcryptjs";
 import { signIn } from "@/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
-import ratelimit from "../ratelimit";
+import ratelimit from "../rateLimit";
+
 
 
 
