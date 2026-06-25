@@ -10,7 +10,7 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { workflowClient } from "@/lib/workflow";
 import config from "@/lib/config";
-import ratelimit from "../ratelimit";
+import ratelimit from "../rateLimit";
 
 
 export const signInWithCredentials = async (
