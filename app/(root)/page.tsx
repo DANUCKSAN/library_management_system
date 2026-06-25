@@ -1,12 +1,17 @@
+import { auth } from "@/auth";
 import BookList from "@/components/BookList";
 import BookOverview from "@/components/BookOverview";
 import { sampleBooks } from "@/constants";
 
 
-export default function Home() {
+export default async function Home() {
+
+  const session=await auth();
   return (
     <>
-     <BookOverview {...sampleBooks[0]} />
+
+    {session && <h1 className="text-2xl font-semibold text-white">Welcome, {session.user?.name}</h1>}
+     <BookOverview {...sampleBooks[0]}  />
 
      <BookList
      title='Popular Books'
