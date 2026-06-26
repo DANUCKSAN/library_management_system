@@ -1,9 +1,10 @@
-import { cn } from '@/lib/utils';
-import Image from 'next/image';
-import { config } from 'process';
-import React from 'react'
-import BookCoverSvg from './BookCoverSvg';
+"use client";
 
+import React from "react";
+import { cn } from "@/lib/utils";
+import BookCoverSvg from "@/components/BookCoverSvg";
+import { IKImage } from "imagekitio-next";
+import config from "@/lib/config";
 
 type BookCoverVariant = "extraSmall" | "small" | "medium" | "regular" | "wide";
 
@@ -16,35 +17,43 @@ const variantStyles: Record<BookCoverVariant, string> = {
 };
 
 interface Props {
-    variant: BookCoverVariant;
-    className?: string;
-    coverColor: string;
-    coverImage: string;
+  className?: string;
+  variant?: BookCoverVariant;
+  coverColor: string;
+  coverImage: string;
 }
 
-const BookCover = ({variant="regular", className, coverColor="#012B48", coverImage="https://placehold.co/400x600.png"}:Props) => {
+const BookCover = ({
+  className,
+  variant = "regular",
+  coverColor = "#012B48",
+  coverImage = "https://placehold.co/400x600.png",
+}: Props) => {
   return (
-    <div  className={cn(
+    <div
+      className={cn(
         "relative transition-all duration-300",
         variantStyles[variant],
         className,
-      )}>
+      )}
+    >
       <BookCoverSvg coverColor={coverColor} />
-       <div
+
+      <div
         className="absolute z-10"
         style={{ left: "12%", width: "87.5%", height: "88%" }}
       >
-        <Image
-          src={coverImage}
+        <IKImage
+          path={coverImage}
+          urlEndpoint={config.env.imageKit.urlEndpoint}
           alt="Book cover"
           fill
           className="rounded-sm object-fill"
           loading="lazy"
-         
+          lqip={{ active: true }}
         />
       </div>
     </div>
-  )
-}
-
-export default BookCover
+  );
+};
+export default BookCover;
