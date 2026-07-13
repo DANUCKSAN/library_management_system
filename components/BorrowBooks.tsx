@@ -26,11 +26,7 @@ const BorrowBook = ({
 
   const handleBorrowBook = async () => {
     if (!isEligible) {
-      toast({
-        title: "Error",
-        description: message,
-        variant: "destructive",
-      });
+      toast.error(message);
     }
 
     setBorrowing(true);
@@ -39,25 +35,14 @@ const BorrowBook = ({
       const result = await borrowBook({ bookId, userId });
 
       if (result.success) {
-        toast({
-          title: "Success",
-          description: "Book borrowed successfully",
-        });
+        toast.success("Book borrowed successfully");
 
         router.push("/");
       } else {
-        toast({
-          title: "Error",
-          description: result.error,
-          variant: "destructive",
-        });
+        toast.error(result.error);
       }
     } catch (error) {
-      toast({
-        title: "Error",
-        description: "An error occurred while borrowing the book",
-        variant: "destructive",
-      });
+      toast.error("An error occurred while borrowing the book");
     } finally {
       setBorrowing(false);
     }
